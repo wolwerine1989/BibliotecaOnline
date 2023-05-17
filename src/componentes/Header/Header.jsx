@@ -16,9 +16,12 @@ const Header = () => {
                 <h2 className='header-title text-capitalize'>
                     Encuentra tu libro
                 </h2><br/>
-                <p className='header-text fs-18'>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Reiciendis itaque provident ut amet labore accusantium laudantium voluptatibus corporis asperiores.
-                  Est ipsam quasi eveniet atque, voluptatum beatae dolores possimus similique illo.</p>
+                <p className='header-text fs-18'>
+                La lectura es un boleto gratis a cualquier parte durante cualquier tiempo
+                y en cualquier época.
+
+                
+                </p>
                   <SearchForm/>
             </div>
 

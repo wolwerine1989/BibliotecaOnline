@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const URL = "https://openlibrary.org/works/";
-const URL2 = "https://covers.openlibrary.org/b/isbn/";
 
 
 const BookDetails = () => {
