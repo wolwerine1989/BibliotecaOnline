@@ -17,10 +17,7 @@ const Header = () => {
                     Encuentra tu libro
                 </h2><br/>
                 <p className='header-text fs-18'>
-                La lectura es un boleto gratis a cualquier parte durante cualquier tiempo
-                y en cualquier época.
-
-                
+                  LA LECTURA ES UN BOLETO GRATIS A CUALQUIER PARTE, DURANTE CUALQUIER TIEMPO Y EN CUALQUIER FECHA               
                 </p>
                   <SearchForm/>
             </div>

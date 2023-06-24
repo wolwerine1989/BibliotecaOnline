@@ -16,7 +16,7 @@ const Navbar = () => {
                 <Link to = "/" className='navbar-brand flex'>
                     <img src={logoImg} alt="site logo" />
                     <span className='text-uppercase fw-7 fs-24 ls-1'>
-                        Leo Store
+                        Main
                     </span>
                 </Link>
 
@@ -30,28 +30,36 @@ const Navbar = () => {
             </div>
                 <div className={toogleMenu ? "navbar-collapse show-navbar-collapse" : "navbar-collapse"}>
                     <ul className="navbar-nav">
-                        <li className='nav-item'>
+                        <li  className='nav-item' style={{color:'red'}}>
                             <Link to = "book"
                                 className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
-                                Home
+                                Pagina Principal
                             </Link>
                         </li>
 
-                        <li className='nav-item'>
+                        <li style={{color:'red'}} className='nav-item'>
                             <Link to = "about"
                                 className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
-                                About
+                                Sobre Nosotros
                             </Link>
                         </li>
-                        <li className='nav-item'> 
-                            <Link to = "Rental"
-                                className=''> 
-                                Libros
+
+                        <li style={{color:'red'}} className='nav-item'>
+                            <Link to = "crearlibro"
+                                className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
+                                    crear libro
                             </Link>
                         </li>
+
+                        <li style={{color:'red'}} className='nav-item'>
+                            <Link to = "bookrental2"
+                                className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>
+                                Alquilar Libro
+                            </Link>
+                        </li>
+
                     </ul>
                 </div>
-
         </div>
     </nav>
   )

@@ -16,8 +16,8 @@ const About = () => {
             <img src = {logoLibro} alt = "" />
           </div>
           <div className='about-text'>
-            <h2 className='about-title fs-26 ls-1'>About BookHub</h2>
-            <p className='fs-17'>Somos una empresa que quiere incentivar la lectura en los niños, jovenes y adultos. Para ello hemos creadp esta pagina para que puedan tener
+            <h2 className='about-title fs-26 ls-1'>About Libreria Mente Fresca</h2>
+            <p className='fs-17'>Somos una Biblioteca Online que quiere incentivar la lectura en los niños, jovenes y adultos. Para ello hemos creadp esta pagina para que puedan tener
             una mejor idea, del tipo de libro que desearian escoger para leeer</p>
             <p className='fs-17'>Nos encontramos en Latacunga - Ecuador. Para mayor informacion contactar al numero: 134568946 o tambien al correo:juanitoperez@gmail.com  </p>
           </div>

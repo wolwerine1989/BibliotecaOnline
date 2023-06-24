@@ -1,55 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
-function Libros() {
-  const [libros, setLibros] = useState([]);
-  const [alquiler, setAlquiler] = useState({ libro: '', tiempo: '' });
-  const [mensaje, setMensaje] = useState('');
+function BookReservation() {
+  const [reserved, setReserved] = useState(false);
+  const [bookName, setBookName] = useState('');
 
-  // Obtener datos de la API externa
-  useEffect(() => {
-    axios.get('https://api-libros.com/libros')
-      .then(res => {
-        setLibros(res.data);
-      })
-      .catch(err => console.log(err));
-  }, []);
+  const handleBookNameChange = (event) => {
+    setBookName(event.target.value);
+  };
 
-  // Manejar cambios en el formulario de alquiler
-  const handleInputChange = e => {
-    setAlquiler({ ...alquiler, [e.target.name]: e.target.value });
-  }
-
-  // Enviar solicitud de alquiler a la API externa
-  const handleAlquilar = () => {
-    axios.post('https://api-libros.com/alquiler', alquiler)
-      .then(res => {
-        setMensaje(`El libro ${res.data.libro} ha sido alquilado por ${res.data.tiempo} días.`);
-      })
-      .catch(err => console.log(err));
-  }
+  const reserveBook = () => {
+    if (bookName !== '') {
+      setReserved(true);
+      setTimeout(() => {
+        setReserved(false);
+      }, 5000);
+    }
+  };
 
   return (
     <div>
-      <h2>Lista de libros</h2>
-      <ul>
-        {libros.map(libro => (
-          <li key={libro.id}>
-            <strong>{libro.titulo}</strong> por {libro.autor}
-            <button onClick={() => setAlquiler({ libro: libro.titulo })}>Alquilar</button>
-          </li>
-        ))}
-      </ul>
-      <h2>Alquilar libro</h2>
-      <form>
-        <label htmlFor="libro">Libro:</label>
-        <input type="text" name="libro" value={alquiler.libro} readOnly /><br />
-        <label htmlFor="tiempo">Tiempo de alquiler (días):</label>
-        <input type="number" name="tiempo" value={alquiler.tiempo} onChange={handleInputChange} /><br />
-        <button type="button" onClick={handleAlquilar}>Alquilar</button>
-      </form>
-      {mensaje && <p>{mensaje}</p>}
+      <h2>Reserva de Libro</h2>
+      <label>
+        Nombre del libro:
+        <input type="text" value={bookName} onChange={handleBookNameChange} />
+      </label>
+      <button onClick={reserveBook}>Reservar Libro</button>
+      {reserved ? (
+        <p>¡El libro {bookName} está reservado!. Te quedan 5 dias para regresar el libro</p>
+      ) : (
+        <p>El libro no está disponible.</p>
+      )}
     </div>
   );
 }
 
+export default BookReservation;

@@ -42,11 +42,15 @@ function Rental() {
       </ul>
       <h2>Alquilar libro</h2>
       <form>
+        
         <label htmlFor="libro">Libro:</label>
         <input type="text" name="libro" value={alquiler.libro} readOnly /><br />
+        
         <label htmlFor="tiempo">Tiempo de alquiler (días):</label>
         <input type="number" name="tiempo" value={alquiler.tiempo} onChange={handleInputChange} /><br />
+
         <button type="button" onClick={handleAlquilar}>Alquilar</button>
+        
       </form>
       {mensaje && <p>{mensaje}</p>}
     </div>
